@@ -283,6 +283,34 @@
   .plan button{width:100%;background:var(--gold);color:#1a1714;border:none;font-weight:700;
     font-size:14px;padding:13px;border-radius:10px;cursor:pointer;font-family:var(--text)}
   .plan button:hover{background:#d0b189}
+  .subform{background:rgba(245,243,239,.05);border:1px solid rgba(245,243,239,.16);
+    border-radius:var(--r-m);padding:22px 20px;margin-bottom:24px}
+  @media(min-width:800px){.subform{padding:28px 26px}}
+  .sfh b{display:block;font-family:var(--disp);font-size:20px;color:#fff;margin-bottom:5px}
+  .sfh p{font-size:14px;color:rgba(245,243,239,.7);line-height:1.55;margin-bottom:16px}
+  .sform{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:700px){.sform{grid-template-columns:1fr 1fr}.sfull{grid-column:1/-1}}
+  .sfield{display:flex;flex-direction:column;gap:5px}
+  .sfield span{font-size:12.5px;letter-spacing:.3px;color:rgba(245,243,239,.62)}
+  .sfield input,.sfield select,.srow input{background:rgba(239,233,221,.07);
+    border:1px solid rgba(239,233,221,.24);color:var(--cream);font-size:15px;
+    padding:12px 14px;border-radius:10px;font-family:var(--text);width:100%}
+  .sfield input::placeholder,.srow input::placeholder{color:rgba(239,233,221,.5)}
+  .sfield input:focus,.sfield select:focus,.srow input:focus{outline:none;border-color:var(--gold)}
+  .sfield select{appearance:none;cursor:pointer}
+  .sfield select option{background:#1a1714;color:var(--cream)}
+  .srows{grid-column:1/-1;display:flex;flex-direction:column;gap:10px}
+  .srow{display:grid;grid-template-columns:1fr;gap:8px;padding:12px;border-radius:10px;
+    background:rgba(239,233,221,.04);border:1px solid rgba(239,233,221,.12)}
+  @media(min-width:700px){.srow{grid-template-columns:150px 1fr 1.4fr}}
+  .saddbtn{grid-column:1/-1;justify-self:start;background:none;border:1px dashed rgba(194,165,126,.55);
+    color:var(--gold);font-size:13.5px;font-weight:600;padding:10px 16px;border-radius:10px;
+    cursor:pointer;font-family:var(--text)}
+  .saddbtn:hover{border-color:var(--gold);background:rgba(194,165,126,.08)}
+  .saddbtn[disabled]{opacity:.4;cursor:default}
+  .sform button[type=submit]{width:100%;background:#4d8560;color:#fff;border:none;font-weight:700;
+    font-size:15px;padding:14px;border-radius:10px;cursor:pointer;font-family:var(--text)}
+  .sform button[type=submit]:hover{background:#5c9a70}
   .subhow{display:grid;grid-template-columns:1fr;gap:14px;padding-top:22px;
     border-top:1px solid rgba(245,243,239,.14)}
   @media(min-width:800px){.subhow{grid-template-columns:repeat(3,1fr);gap:24px}}
@@ -297,7 +325,7 @@
 <div class="top">
   <header id="hd"><div class="wrap bar">
     <a class="brand" href="#">
-      <span class="logo">ФЛ<svg class="o" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke-dasharray="51.8 4.7" transform="rotate(-35 12 12)"/></svg>РА</span>
+      <span class="logo">ФЛОРА</span>
       <span class="sub">Авторская флористика · Сургут</span>
     </a>
     <nav class="nav">
@@ -319,12 +347,12 @@
     <div class="bg"><img src="img/hero.jpg" alt="Сборка авторского букета"></div>
     <div class="in">
       <h1>Авторские букеты<br>с доставкой по Сургуту</h1>
-      <p>Соберём руками, упакуем и привезём сегодня. К Новому году — живые ёлки.</p>
+      <p>Соберём руками, упакуем и привезём по адресу. К Новому году везём живые ёлки.</p>
       <a href="#catalog" class="cta">Смотреть каталог</a>
       <div class="trust">
-        <span><i>★</i> <b>4,9</b> — 128 оценок</span><span class="dot">·</span>
+        
         <span>свежесть гарантируем</span><span class="dot">·</span>
-        <span>доставка от 2 часов</span>
+        <span>доставка по Сургуту</span>
       </div>
     </div>
   </div>
@@ -340,122 +368,56 @@
       <p class="ssub">Авторская сборка · фирменная упаковка · оплата картой онлайн</p></div>
     <div class="grid">
       <article class="card">
-        <div class="ph"><img src="img/b01.jpg" alt="Большой букет пионов" loading="lazy"></div>
+        <div class="ph"><img src="img/b01.jpg" alt="Пять розовых пионов в белой бумаге" loading="lazy"></div>
         <div class="cbody">
-          <h3 class="cname">Большой букет пионов</h3>
-          <div class="rate"><span class="s">★</span><b>4,9</b><span>9 оценок</span></div>
-          <p class="cnote">максимальный объём · крафт и лента ручной вязки</p>
-          <div class="cmeta"><div class="price">24 900<small> ₽</small></div><div class="split"><b>6 220 ₽</b> × 4 без переплаты</div></div>
+          <h3 class="cname">Пять пионов в белой бумаге</h3>
+          <p class="cnote">моно букет · матовая бумага, без ленты</p>
+          <div class="cmeta"><div class="price">3 400<small> ₽</small></div><div class="split"><b>850 ₽</b> × 4 без переплаты</div></div>
           <button class="buy">Оплатить картой</button>
         </div>
       </article>
       <article class="card">
-        <div class="ph"><img src="img/b02.jpg" alt="Пионы пастельные" loading="lazy"></div>
+        <div class="ph"><img src="img/b02.jpg" alt="Пионы розовые россыпью на крафтовой бумаге" loading="lazy"></div>
         <div class="cbody">
-          <h3 class="cname">Пионы пастельные</h3>
-          <div class="rate"><span class="s">★</span><b>4,7</b><span>7 оценок</span></div>
-          <p class="cnote">крупная форма · матовая бумага</p>
-          <div class="cmeta"><div class="price">12 900<small> ₽</small></div><div class="split"><b>3 220 ₽</b> × 4 без переплаты</div></div>
+          <h3 class="cname">Пионы розовые россыпью</h3>
+          <p class="cnote">5 стеблей · крафтовая бумага, без сборки в букет</p>
+          <div class="cmeta"><div class="price">2 490<small> ₽</small></div><div class="split"><b>622 ₽</b> × 4 без переплаты</div></div>
           <button class="buy">Оплатить картой</button>
         </div>
       </article>
       <article class="card">
-        <div class="ph"><img src="img/b03.jpg" alt="Пионы кремовые" loading="lazy"></div>
+        <div class="ph"><img src="img/b03.jpg" alt="Розовые пионы с сиреневой астрой в крафте" loading="lazy"></div>
         <div class="cbody">
-          <h3 class="cname">Пионы кремовые</h3>
-          <div class="rate"><span class="s">★</span><b>4,8</b><span>11 оценок</span></div>
-          <p class="cnote">объёмная сборка · атласная лента</p>
-          <div class="cmeta"><div class="price">9 900<small> ₽</small></div><div class="split"><b>2 480 ₽</b> × 4 без переплаты</div></div>
+          <h3 class="cname">Пионы розовые с сиреневой астрой</h3>
+          <p class="cnote">крупные бутоны · крафт двух тонов</p>
+          <div class="cmeta"><div class="price">3 900<small> ₽</small></div><div class="split"><b>975 ₽</b> × 4 без переплаты</div></div>
           <button class="buy">Оплатить картой</button>
         </div>
       </article>
       <article class="card">
-        <div class="ph"><img src="img/b04.jpg" alt="Пионы коралловые" loading="lazy"></div>
+        <div class="ph"><img src="img/b04.jpg" alt="Пионы с сиреневой гипсофилой в пудровой бумаге" loading="lazy"></div>
         <div class="cbody">
-          <h3 class="cname">Пионы коралловые</h3>
-          <div class="rate"><span class="s">★</span><b>5,0</b><span>6 оценок</span></div>
-          <p class="cnote">акцентная сборка · крафт и сетка</p>
-          <div class="cmeta"><div class="price">14 900<small> ₽</small></div><div class="split"><b>3 720 ₽</b> × 4 без переплаты</div></div>
+          <h3 class="cname">Пионы с сиреневой гипсофилой</h3>
+          <p class="cnote">большой объём · серая калька и пудровая бумага</p>
+          <div class="cmeta"><div class="price">9 900<small> ₽</small></div><div class="split"><b>2 475 ₽</b> × 4 без переплаты</div></div>
           <button class="buy">Оплатить картой</button>
         </div>
       </article>
       <article class="card">
-        <div class="ph"><img src="img/b05.jpg" alt="Пионы в крафте" loading="lazy"></div>
+        <div class="ph"><img src="img/b08.jpg" alt="Пионы с гиперикумом и эвкалиптом в крафте" loading="lazy"></div>
         <div class="cbody">
-          <h3 class="cname">Пионы в крафте</h3>
-          <div class="rate"><span class="s">★</span><b>4,9</b><span>14 оценок</span></div>
-          <p class="cnote">максимальный объём · натуральный крафт</p>
-          <div class="cmeta"><div class="price">6 900<small> ₽</small></div><div class="split"><b>1 720 ₽</b> × 4 без переплаты</div></div>
+          <h3 class="cname">Пионы с гиперикумом и эвкалиптом</h3>
+          <p class="cnote">круглая форма · крафт и чёрная плёнка</p>
+          <div class="cmeta"><div class="price">6 900<small> ₽</small></div><div class="split"><b>1 725 ₽</b> × 4 без переплаты</div></div>
           <button class="buy">Оплатить картой</button>
         </div>
       </article>
       <article class="card">
-        <div class="ph"><img src="img/b06.jpg" alt="Пионы малиновые" loading="lazy"></div>
+        <div class="ph"><img src="img/b12.jpg" alt="Пудровые пионы в розовой бумаге с открыткой" loading="lazy"></div>
         <div class="cbody">
-          <h3 class="cname">Пионы малиновые</h3>
-          <div class="rate"><span class="s">★</span><b>4,8</b><span>5 оценок</span></div>
-          <p class="cnote">плотная сборка · крупные бутоны</p>
-          <div class="cmeta"><div class="price">11 900<small> ₽</small></div><div class="split"><b>2 980 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy">Оплатить картой</button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><img src="img/b07.jpg" alt="Пионы сиреневые" loading="lazy"></div>
-        <div class="cbody">
-          <h3 class="cname">Пионы сиреневые</h3>
-          <div class="rate"><span class="s">★</span><b>4,9</b><span>8 оценок</span></div>
-          <p class="cnote">редкий оттенок · под заказ</p>
-          <div class="cmeta"><div class="price">16 900<small> ₽</small></div><div class="split"><b>4 220 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy">Оплатить картой</button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><img src="img/b08.jpg" alt="Пионы с тюльпанами" loading="lazy"></div>
-        <div class="cbody">
-          <h3 class="cname">Пионы с тюльпанами</h3>
-          <div class="rate"><span class="s">★</span><b>4,8</b><span>12 оценок</span></div>
-          <p class="cnote">сезонный микс · мягкий переход</p>
-          <div class="cmeta"><div class="price">7 900<small> ₽</small></div><div class="split"><b>1 980 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy">Оплатить картой</button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><img src="img/b09.jpg" alt="Кустовые розы" loading="lazy"></div>
-        <div class="cbody">
-          <h3 class="cname">Пионы в белой бумаге</h3>
-          <div class="rate"><span class="s">★</span><b>4,7</b><span>6 оценок</span></div>
-          <p class="cnote">объёмная сборка · широкая лента</p>
-          <div class="cmeta"><div class="price">5 900<small> ₽</small></div><div class="split"><b>1 480 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy">Оплатить картой</button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><img src="img/b10.jpg" alt="Розы сиреневые" loading="lazy"></div>
-        <div class="cbody">
-          <h3 class="cname">Пионы розовые</h3>
-          <div class="rate"><span class="s">★</span><b>5,0</b><span>7 оценок</span></div>
-          <p class="cnote">тёмная лента · контрастная подача</p>
-          <div class="cmeta"><div class="price">4 900<small> ₽</small></div><div class="split"><b>1 220 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy">Оплатить картой</button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><img src="img/b11.jpg" alt="Розы пудровые" loading="lazy"></div>
-        <div class="cbody">
-          <h3 class="cname">Пионы пудровые</h3>
-          <div class="rate"><span class="s">★</span><b>4,9</b><span>10 оценок</span></div>
-          <p class="cnote">спокойная сборка · без повода</p>
-          <div class="cmeta"><div class="price">19 900<small> ₽</small></div><div class="split"><b>4 980 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy">Оплатить картой</button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><img src="img/b12.jpg" alt="Букет невесты" loading="lazy"></div>
-        <div class="cbody">
-          <h3 class="cname">Пионы кремовые в крафте</h3>
-          <div class="rate"><span class="s">★</span><b>5,0</b><span>4 оценки</span></div>
-          <p class="cnote">компактная форма · крепление под руку</p>
-          <div class="cmeta"><div class="price">29 900<small> ₽</small></div><div class="split"><b>7 480 ₽</b> × 4 без переплаты</div></div>
+          <h3 class="cname">Пионы пудровые с открыткой</h3>
+          <p class="cnote">плотная сборка · розовая бумага и белая сетка</p>
+          <div class="cmeta"><div class="price">7 900<small> ₽</small></div><div class="split"><b>1 975 ₽</b> × 4 без переплаты</div></div>
           <button class="buy">Оплатить картой</button>
         </div>
       </article>
@@ -464,65 +426,50 @@
 
   <section id="ny">
     <div class="shead"><h2 class="stitle">Новогодние ёлки</h2>
-      <p class="ssub">Сезонное · пихта и ель · привезём и установим</p></div>
+      <p class="ssub">Сезонное · живые ёлки · доставка по Сургуту</p></div>
     <div class="grid">
       <article class="card">
-        <div class="ph"><img src="img/t01.jpg" alt="Ель натуральная, 1,8–2,2 м" loading="lazy"></div>
+        <div class="ph"><img src="img/t01.jpg" alt="Живая ель с редкой кроной, без украшений" loading="lazy"></div>
         <div class="cbody">
-          <h3 class="cname">Ель натуральная, 1,8–2,2 м</h3>
-          <div class="rate"><span class="s">★</span><b>4,8</b><span>5 оценок</span></div>
-          <p class="cnote">привезём и установим · скандинавская подача</p>
-          <div class="cmeta"><div class="price">28 900<small> ₽</small></div><div class="split"><b>7 220 ₽</b> × 4 без переплаты</div></div>
+          <h3 class="cname">Ель живая, без украшений</h3>
+          <p class="cnote">редкая природная крона · наряжаете сами</p>
+          <div class="cmeta"><div class="price">3 900<small> ₽</small></div><div class="split"><b>975 ₽</b> × 4 без переплаты</div></div>
           <button class="buy">Оплатить картой</button>
         </div>
       </article>
       <article class="card">
-        <div class="ph"><img src="img/t02.jpg" alt="Пихта в светлом интерьере, 2 м" loading="lazy"></div>
+        <div class="ph"><img src="img/t02.jpg" alt="Ель в плетёной корзине с деревянными игрушками" loading="lazy"></div>
         <div class="cbody">
-          <h3 class="cname">Пихта в светлом интерьере, 2 м</h3>
-          <div class="rate"><span class="s">★</span><b>5,0</b><span>4 оценки</span></div>
-          <p class="cnote">густая крона · без осыпания</p>
-          <div class="cmeta"><div class="price">32 900<small> ₽</small></div><div class="split"><b>8 220 ₽</b> × 4 без переплаты</div></div>
+          <h3 class="cname">Ель в плетёной корзине, около 2 м</h3>
+          <p class="cnote">деревянные и белые игрушки · корзина в комплекте</p>
+          <div class="cmeta"><div class="price">8 900<small> ₽</small></div><div class="split"><b>2 225 ₽</b> × 4 без переплаты</div></div>
           <button class="buy">Оплатить картой</button>
         </div>
       </article>
       <article class="card">
-        <div class="ph"><img src="img/t03.jpg" alt="Ель с деревянным декором" loading="lazy"></div>
+        <div class="ph"><img src="img/t03.jpg" alt="Ёлка с белыми и золотыми шарами и гирляндой" loading="lazy"></div>
         <div class="cbody">
-          <h3 class="cname">Ель с деревянным декором</h3>
-          <div class="rate"><span class="s">★</span><b>4,8</b><span>6 оценок</span></div>
-          <p class="cnote">натуральные игрушки в комплекте</p>
-          <div class="cmeta"><div class="price">36 900<small> ₽</small></div><div class="split"><b>9 220 ₽</b> × 4 без переплаты</div></div>
+          <h3 class="cname">Ёлка с белыми и золотыми шарами</h3>
+          <p class="cnote">около 1,7 м · шары и тёплая гирлянда в комплекте</p>
+          <div class="cmeta"><div class="price">9 900<small> ₽</small></div><div class="split"><b>2 475 ₽</b> × 4 без переплаты</div></div>
           <button class="buy">Оплатить картой</button>
         </div>
       </article>
       <article class="card">
-        <div class="ph"><img src="img/t04.jpg" alt="Настольные ёлочки, набор" loading="lazy"></div>
+        <div class="ph"><img src="img/t05.jpg" alt="Ель с деревянными игрушками и снежинками" loading="lazy"></div>
         <div class="cbody">
-          <h3 class="cname">Настольные ёлочки, набор</h3>
-          <div class="rate"><span class="s">★</span><b>4,8</b><span>4 оценки</span></div>
-          <p class="cnote">для стола и подоконника</p>
-          <div class="cmeta"><div class="price">9 900<small> ₽</small></div><div class="split"><b>2 480 ₽</b> × 4 без переплаты</div></div>
+          <h3 class="cname">Ель с деревянными игрушками</h3>
+          <p class="cnote">та же ель, но уже наряженная · игрушки в комплекте</p>
+          <div class="cmeta"><div class="price">6 900<small> ₽</small></div><div class="split"><b>1 725 ₽</b> × 4 без переплаты</div></div>
           <button class="buy">Оплатить картой</button>
         </div>
       </article>
       <article class="card">
-        <div class="ph"><img src="img/t05.jpg" alt="Ель в кашпо, живая" loading="lazy"></div>
+        <div class="ph"><img src="img/t06.jpg" alt="Густая ёлка с игрушками и гирляндой" loading="lazy"></div>
         <div class="cbody">
-          <h3 class="cname">Ель в кашпо, живая</h3>
-          <div class="rate"><span class="s">★</span><b>5,0</b><span>5 оценок</span></div>
-          <p class="cnote">останется с вами после праздника</p>
-          <div class="cmeta"><div class="price">21 900<small> ₽</small></div><div class="split"><b>5 480 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy">Оплатить картой</button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><img src="img/t06.jpg" alt="Пихта Нордмана, 1,5–1,8 м" loading="lazy"></div>
-        <div class="cbody">
-          <h3 class="cname">Пихта Нордмана, 1,5–1,8 м</h3>
-          <div class="rate"><span class="s">★</span><b>4,6</b><span>5 оценок</span></div>
-          <p class="cnote">мягкая хвоя, не осыпается</p>
-          <div class="cmeta"><div class="price">24 900<small> ₽</small></div><div class="split"><b>6 220 ₽</b> × 4 без переплаты</div></div>
+          <h3 class="cname">Ёлка густая, с игрушками и гирляндой</h3>
+          <p class="cnote">плотная хвоя · игрушки и гирлянда в комплекте</p>
+          <div class="cmeta"><div class="price">7 900<small> ₽</small></div><div class="split"><b>1 975 ₽</b> × 4 без переплаты</div></div>
           <button class="buy">Оплатить картой</button>
         </div>
       </article>
@@ -552,19 +499,6 @@
     </div>
   </section>
 
-  <section id="revs">
-    <div class="shead"><h2 class="stitle">Что говорят</h2>
-      <p class="ssub">Отзывы покупателей из Сургута</p></div>
-    <div class="revs">
-      <figure class="rev"><div class="stars">★★★★★</div><blockquote>Заказывала маме на юбилей. Собрали именно так, как я описала словами, без образца. Привезли вовремя, мама в восторге.</blockquote><figcaption>Анна К. · 12 сентября</figcaption></figure>
-      <figure class="rev"><div class="stars">★★★★★</div><blockquote>Брал жене без повода. Понравилось, что можно оплатить картой и никуда не звонить. Через два часа букет был дома.</blockquote><figcaption>Дмитрий · 3 сентября</figcaption></figure>
-      <figure class="rev"><div class="stars">★★★★★</div><blockquote>Второй раз беру здесь. В прошлый раз букет простоял одиннадцать дней, это честно много.</blockquote><figcaption>Ольга М. · 28 августа</figcaption></figure>
-      <figure class="rev"><div class="stars">★★★★★</div><blockquote>Сто один пион — это совсем другой масштаб. Упаковка крафтовая, выглядит дорого, без мишуры.</blockquote><figcaption>Ирина · 24 августа</figcaption></figure>
-      <figure class="rev"><div class="stars">★★★★★</div><blockquote>Нужен был букет к восьми утра. Привезли к семи сорока. Всё.</blockquote><figcaption>Сергей В. · 19 августа</figcaption></figure>
-      <figure class="rev"><div class="stars">★★★★★</div><blockquote>Люблю, что можно просто написать в телеграм и не объяснять по телефону. Собрали по описанию.</blockquote><figcaption>Марина · 11 августа</figcaption></figure>
-    </div>
-  </section>
-
   <section id="zayavka">
     <div class="lead">
       <div class="lh">Не знаете, что выбрать?</div>
@@ -585,51 +519,88 @@
     <div class="sub">
       <div class="lab">Подписка</div>
       <h2>Вы больше не забудете<br>ни одну важную дату</h2>
-      <p class="lead">Называете даты один раз — дни рождения мамы, жены, дочери, годовщину.
+      <p class="lead">Называете даты один раз: дни рождения мамы, жены, дочери, годовщину.
       Мы напоминаем за три дня, согласуем букет и привозим в нужный день. Цена зафиксирована
       на весь год, что бы ни случилось с рынком.</p>
 
       <div class="subgrid">
         <div class="plan">
-          <div class="tag"></div>
-          <b>Две даты</b>
+          <div class="tag">Для начала</div>
+          <b>Маме и бабушке</b>
           <div class="pr">19 900<small> ₽</small></div>
-          <div class="per">9 950 ₽ за дату</div>
+          <div class="per">Две даты, 9 950 ₽ за дату</div>
           <ul>
-            <li>Две доставки в течение года</li>
+            <li>День рождения и 8 Марта. Или два дня рождения</li>
+            <li>Ваши слова в открытке, пишем от руки</li>
             <li>Напоминание за три дня</li>
             <li>Доставка по Сургуту включена</li>
           </ul>
-          <div class="b"><button>Оформить подписку</button></div>
+          <div class="b"><button type="button" data-plan="Маме и бабушке, 19 900 ₽">Внести даты</button></div>
         </div>
 
         <div class="plan best">
           <div class="tag">Берут чаще всего</div>
-          <b>Четыре даты</b>
+          <b>Идеальный муж</b>
           <div class="pr">36 900<small> ₽</small></div>
-          <div class="per">9 225 ₽ за дату</div>
+          <div class="per">Четыре даты, 9 225 ₽ за дату</div>
           <ul>
-            <li>Четыре доставки в течение года</li>
-            <li>8 Марта и 14 февраля — по той же цене</li>
+            <li>14 февраля, 8 Марта, день рождения, годовщина</li>
+            <li>Цена та же, даже в пиковые дни</li>
             <li>Букет собирается под повод, не шаблон</li>
-            <li>Открытка от руки в каждую дату</li>
+            <li>Своё сообщение к каждой доставке</li>
           </ul>
-          <div class="b"><button>Оформить подписку</button></div>
+          <div class="b"><button type="button" data-plan="Идеальный муж, 36 900 ₽">Внести даты</button></div>
         </div>
 
         <div class="plan">
           <div class="tag">Для семьи целиком</div>
-          <b>Шесть дат</b>
+          <b>Вся семья</b>
           <div class="pr">49 900<small> ₽</small></div>
-          <div class="per">8 316 ₽ за дату</div>
+          <div class="per">Шесть дат, 8 316 ₽ за дату</div>
           <ul>
-            <li>Шесть доставок в течение года</li>
+            <li>Жена, мама, тёща, дочь, бабушка, сестра</li>
             <li>Любые даты, включая пиковые</li>
             <li>Отдельный флорист на ваши заказы</li>
             <li>Перенос даты без доплаты</li>
           </ul>
-          <div class="b"><button>Оформить подписку</button></div>
+          <div class="b"><button type="button" data-plan="Вся семья, 49 900 ₽">Внести даты</button></div>
         </div>
+      </div>
+
+      <div class="subform" id="subform">
+        <div class="sfh">
+          <b>Внесите даты в календарь</b>
+          <p>Дальше помнить будем мы. Напомним за три дня, согласуем букет
+          и привезём в нужный день с вашей открыткой.</p>
+        </div>
+        <form class="sform" id="sf" onsubmit="return leadSend(event,'sf','sok')">
+          <label class="sfield sfull">
+            <span>Пакет</span>
+            <select name="plan" id="splan">
+              <option>Маме и бабушке, 19 900 ₽</option>
+              <option selected>Идеальный муж, 36 900 ₽</option>
+              <option>Вся семья, 49 900 ₽</option>
+              <option>Пока не выбрал, подскажите</option>
+            </select>
+          </label>
+
+          <div class="srows" id="srows"></div>
+          <button type="button" class="saddbtn" id="sadd">Добавить ещё дату</button>
+
+          <label class="sfield"><span>Ваше имя</span>
+            <input name="name" placeholder="Как к вам обращаться" required></label>
+          <label class="sfield"><span>Телефон</span>
+            <input name="phone" type="tel" placeholder="+7" required></label>
+
+          <input type="text" name="website" tabindex="-1" autocomplete="off"
+                 style="position:absolute;left:-9999px" aria-hidden="true">
+          <input type="hidden" name="details" id="sdetails">
+          <div class="sfull"><button type="submit">Оформить подписку</button></div>
+        </form>
+        <div class="lnote">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+        Оплата после того, как согласуем даты и состав букетов.</div>
+        <div class="lok" id="sok">Спасибо, даты приняты. Перезвоним в рабочее время,
+        с 9:00 до 21:00, и подтвердим каждую.</div>
       </div>
 
       <div class="subhow">
@@ -637,10 +608,10 @@
           <p>8 Марта и 14 февраля цветы в городе дорожают в два-три раза, а букеты
           разбирают за неделю. У вас дата забронирована и оплачена по осенней цене.</p></div>
         <div><b>Если планы изменились</b>
-          <p>Дату можно перенести или сменить получателя — предупредите за сутки.
+          <p>Дату можно перенести или сменить получателя, предупредите за сутки.
           Неиспользованные даты переходят на следующий год.</p></div>
         <div><b>Кому обычно берут</b>
-          <p>Маме, жене, дочери, тёще. И отдельная история — компании: дни рождения
+          <p>Маме, жене, дочери, тёще. Отдельная история это компании: дни рождения
           сотрудников закрываются одним договором, считаем под ваш список.</p></div>
       </div>
     </div>
@@ -658,18 +629,16 @@
         <p>Собираем в день доставки. Что-то не так — заменим или переделаем.</p></div>
     </div>
   </section>
-
-  <div class="note">🔧 Черновик-витрина для показа. Фото букетов, реальные цены, город и зону доставки подставим от Артёма; кнопка «Оплатить картой» подключится к эквайрингу Т-Банка.</div>
 </div>
 
 <footer><div class="wrap">
   <div class="cols">
-    <div><div class="flogo">ФЛ<svg class="o" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke-dasharray="51.8 4.7" transform="rotate(-35 12 12)"/></svg>РА</div>Авторские букеты<br>и новогодние ёлки<br>с доставкой по Сургуту</div>
+    <div><div class="flogo">ФЛОРА</div>Авторские букеты<br>и новогодние ёлки<br>с доставкой по Сургуту</div>
     <div><b>Каталог</b><a href="#catalog">Букеты</a><a href="#ny">Новогодние ёлки</a><a href="#povody">По поводам</a></div>
     <div><b>Контакты</b><a href="#">Telegram</a><a href="tel:+79225550124">+7 922 555-01-24</a><a href="#">Работаем 9:00–21:00</a></div>
     <div><b>Оплата</b><a href="#">Картой онлайн</a><a href="#">Гарантия свежести</a><div class="pay">💳 🟢 🔵</div></div>
   </div>
-  <div class="legal">ИП · оплата картой онлайн · чек в «Мой налог» · фото: Pexels (свободная лицензия) · © 2026 ФЛОРА (демо-название)</div>
+  <div class="legal">ИП · оплата картой онлайн · чек в «Мой налог» · © 2026 ФЛОРА</div>
 </div></footer>
 
 <script>
@@ -677,10 +646,13 @@
    на сервере, в открытой странице ему не место. Если сервер не ответил,
    сохраняем в браузере и честно просим написать в Telegram, а не делаем вид,
    что всё хорошо. */
-function leadSend(e){
+function leadSend(e,fid,okid){
   e.preventDefault();
-  var f=document.getElementById('lf');
-  var btn=f.querySelector('button');
+  var f=document.getElementById(fid||'lf');
+  var okEl=document.getElementById(okid||'lok');
+  var btn=f.querySelector('button[type=submit]');
+  var label=btn.textContent;
+  if(f.id==='sf') collectRows();
   btn.disabled=true; btn.textContent='Отправляем…';
   var body=new FormData(f);
   fetch('send.php',{method:'POST',body:body})
@@ -688,18 +660,61 @@ function leadSend(e){
     .then(function(d){
       if(!d||!d.ok) throw new Error('bad');
       f.style.display='none';
-      document.getElementById('lok').style.display='block';
+      okEl.style.display='block';
     })
     .catch(function(){
       try{ localStorage.setItem('lead_'+Date.now(), JSON.stringify({
-        name:f.name.value, phone:f.phone.value, ts:new Date().toISOString()})); }catch(x){}
-      btn.disabled=false; btn.textContent='Перезвоните мне';
-      var er=document.getElementById('lok');
-      er.style.display='block';
-      er.textContent='Не получилось отправить. Напишите нам в Telegram, ответим сразу.';
+        name:f.name.value, phone:f.phone.value,
+        details:(f.details?f.details.value:''), ts:new Date().toISOString()})); }catch(x){}
+      btn.disabled=false; btn.textContent=label;
+      okEl.style.display='block';
+      okEl.textContent='Не получилось отправить. Напишите нам в Telegram, ответим сразу.';
     });
   return false;
 }
+
+/* Календарь подписки. Строк изначально две, кнопкой добавляются до шести:
+   больше шести дат ни один пакет не содержит, и длинная простыня отпугивает.
+   Перед отправкой строки сворачиваются в одно скрытое поле details, чтобы
+   send.php не пришлось учить разбирать массивы. */
+(function(){
+  var box=document.getElementById('srows'), add=document.getElementById('sadd');
+  if(!box||!add) return;
+  var MAX=6;
+  function row(){
+    var d=document.createElement('div');
+    d.className='srow';
+    d.innerHTML='<input type="date" class="sdate" aria-label="Дата">'+
+      '<input type="text" class="swho" placeholder="Кому" aria-label="Кому">'+
+      '<input type="text" class="stext" placeholder="Что написать в открытке" aria-label="Сообщение">';
+    box.appendChild(d);
+    add.disabled = box.children.length >= MAX;
+  }
+  row(); row();
+  add.addEventListener('click',row);
+
+  window.collectRows=function(){
+    var out=[];
+    [].forEach.call(box.children,function(r){
+      var d=r.querySelector('.sdate').value.trim();
+      var w=r.querySelector('.swho').value.trim();
+      var t=r.querySelector('.stext').value.trim();
+      if(d||w||t) out.push([d||'дата не указана', w||'получатель не указан', t||'без открытки'].join(' | '));
+    });
+    document.getElementById('sdetails').value = out.join('\n');
+  };
+
+  /* Кнопки на карточках не оформляют заказ, а подставляют пакет в форму
+     и подводят к ней: оплата на сайте не подключена, обещать её нельзя. */
+  document.querySelectorAll('.plan button[data-plan]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var sel=document.getElementById('splan');
+      var want=b.getAttribute('data-plan');
+      [].forEach.call(sel.options,function(o){ if(o.text===want) sel.value=o.value; });
+      document.getElementById('subform').scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+})();
 /* Шапка лежит на фото и прозрачна. Фон и разделитель появляются только
    когда первый экран уехал вверх — иначе верх страницы снова станет плашкой. */
 document.documentElement.classList.remove('nojs');
