@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ФЛОРА — авторские букеты и новогодние ёлки с доставкой по Сургуту</title>
-<meta name="description" content="Соберём авторский букет и доставим по Сургуту. К Новому году — живые ёлки. Оплата картой онлайн.">
+<title>ФЛОРА, авторские букеты и новогодние ёлки с доставкой по Сургуту</title>
+<meta name="description" content="Соберём авторский букет и доставим по Сургуту. К Новому году, живые ёлки. Оплата картой онлайн.">
 <style>
 @font-face{font-family:'Manrope';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/manrope-400-cyr.woff2') format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
 @font-face{font-family:'Manrope';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/manrope-400-lat.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
@@ -18,10 +18,10 @@
     --ink:#1f1e1c; --muted:#6b665e; --line:#e6e2db;
     --bg:#faf8f5; --card:#fff;
     --dark:#221f1b; --dark-2:#2b2723; --cream:#f5f3ef;
-    /* Один акцент вместо трёх. Глубокая зелень — из прошлой (тёмной) версии:
+    /* Один акцент вместо трёх. Глубокая зелень, из прошлой (тёмной) версии:
        #5c7a63 был вымытый шалфей, на белой карточке читался как серо-зелёный.
        Розовый --rose убран целиком: его тень была малиновой (#c2496b), а заливка
-       бежево-розовой — кнопка и её тень были разного цвета. */
+       бежево-розовой, кнопка и её тень были разного цвета. */
     --green:#2f5c43; --green-d:#244734; --gold:#b08a4a;
     --sh:0 8px 30px rgba(38,34,28,.07); --sh-h:0 18px 50px rgba(38,34,28,.15);
     /* Радиусы: было восемь разных значений на одной странице (2,3,10,14,16,30,40,50%).
@@ -34,7 +34,7 @@
   html{scroll-behavior:smooth}
   body{font-family:var(--text);color:var(--ink);font-size:18px;line-height:1.55;
     -webkit-font-smoothing:antialiased;background-color:var(--bg);
-    /* Мягкое световое пятно вверху — из прошлой версии. Ботаническую SVG-текстуру,
+    /* Мягкое световое пятно вверху, из прошлой версии. Ботаническую SVG-текстуру,
        которая шла там же и выглядела грязью, НЕ берём. */
     background-image:radial-gradient(1100px 480px at 50% 0,#fffdfa 0%,rgba(255,253,250,0) 70%);
     background-repeat:no-repeat}
@@ -43,11 +43,11 @@
 
   /* ── ВЕРХНЯЯ ЧАСТЬ ──────────────────────────────────────────────────────
      Было: тёмная панель 86px впритык к фото, затемнённому на 62%. Первые 420px
-     страницы — одно сплошное бурое пятно, шапка от фото не отделялась, цветов
+     страницы, одно сплошное бурое пятно, шапка от фото не отделялась, цветов
      не видно. Отвергнуты уже были: белая шапка, тонкая градиентная полоса,
      просто тёмная панель.
      Стало: шапка ЛЕЖИТ НА ФОТО и прозрачна, фон получает только при прокрутке.
-     В покое верх страницы — это фотография, а не плашка. */
+     В покое верх страницы, это фотография, а не плашка. */
   .top{background:var(--bg);color:var(--ink);position:relative}
   header{position:fixed;top:0;left:0;right:0;z-index:30;
     background:transparent;border-bottom:1px solid transparent;
@@ -60,14 +60,13 @@
   .nojs header{background:rgba(26,23,20,.93);border-bottom-color:rgba(245,243,239,.12)}
 
   /* ── ЛОГОТИП ────────────────────────────────────────────────────────────
-     Круглый знак с бутоном убран. У Flowwow знака нет вообще — их марка
+     Круглый знак с бутоном убран. У Flowwow знака нет вообще, их марка
      это одно слово: тяжёлые тесные капители со срезами в литерах
      (проверено по SVG из брендбука about.flowwow.com/brandbook).
      У цветочного раздела Маркета своего знака тоже нет.
      Владелец про разреженный сериф сказал: «как логотип должен быть, а этот
-     шрифт дерьмовый» — то есть идея вордмарка ему подошла, не подошёл сериф.
-     Поэтому: вордмарк без знака, гротеск, тесный трекинг, и один срез —
-     «О» набрана кольцом с вырезанным лепестком (inline SVG, масштабируется
+     шрифт дерьмовый», то есть идея вордмарка ему подошла, не подошёл сериф.
+     Поэтому: вордмарк без знака, гротеск, тесный трекинг, и один срез, «О» набрана кольцом с вырезанным лепестком (inline SVG, масштабируется
      вместе с кеглем через em). */
   .brand{display:flex;flex-direction:column;line-height:1;gap:7px}
   .brand .sub{font-size:10px;letter-spacing:2.6px;text-transform:uppercase;
@@ -100,7 +99,7 @@
   @media(max-width:759px){.tg{display:none}}
 
   /* ── ПЕРВЫЙ ЭКРАН ───────────────────────────────────────────────────────
-     Затемнение было 62/52/78% — фото превращалось в текстуру, цвет цветов
+     Затемнение было 62/52/78%, фото превращалось в текстуру, цвет цветов
      пропадал. Стало: тёмный только верх (под шапку) и низ (под текст),
      середина открыта. Текст не по центру: центральный блок с лозунгом
      владелец уже забраковал как «не современно, не как Flowwow». Текст
@@ -124,8 +123,7 @@
     padding:16px 36px;border-radius:var(--r-pill);font-size:15.5px;letter-spacing:.2px;
     box-shadow:0 10px 28px rgba(20,42,29,.42);transition:transform .15s,background .15s}
   .cta:hover{transform:translateY(-2px);background:var(--green-d)}
-  /* Плашки-стекляшки с эмодзи заменены на одну спокойную строку —
-     приём из прошлой версии, там он выглядел дороже. */
+  /* Плашки-стекляшки с эмодзи заменены на одну спокойную строку, приём из прошлой версии, там он выглядел дороже. */
   .trust{margin-top:22px;display:flex;gap:9px 14px;flex-wrap:wrap;align-items:center;
     font-size:14.5px;color:rgba(255,255,255,.86);font-weight:500;
     text-shadow:0 1px 10px rgba(0,0,0,.55)}
@@ -137,7 +135,7 @@
      и название секции («Букеты» дважды на расстоянии 40px). Теперь это
      фильтр внутри шапки секции, подписи совпадают с меню. */
   .tabs{display:flex;gap:12px;margin:0 0 20px;flex-wrap:wrap}
-  /* Шапка фиксированная — якоря должны останавливаться ниже неё. */
+  /* Шапка фиксированная, якоря должны останавливаться ниже неё. */
   section[id]{scroll-margin-top:84px}
   .tab{padding:11px 22px;border:1px solid var(--line);background:#fff;border-radius:var(--r-pill);
     font-size:14px;font-weight:600;cursor:pointer;transition:.15s;font-family:var(--text)}
@@ -155,7 +153,7 @@
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   @media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr);gap:26px}}
   @media(min-width:1060px){.grid{grid-template-columns:repeat(3,1fr);gap:24px}}
-  /* Жёсткая рамка 1px заменена мягкой тенью — приём из прошлой версии,
+  /* Жёсткая рамка 1px заменена мягкой тенью, приём из прошлой версии,
      карточки там читались «живее», а владелец хвалил именно скруглённые. */
   .card{background:var(--card);border:1px solid transparent;border-radius:var(--r-m);
     box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;
@@ -172,7 +170,7 @@
   .cnote{font-size:13px;color:var(--muted);line-height:1.45}
   .cmeta{margin-top:auto;padding-top:8px}
   /* Маркет: цена того же кегля, что название (17px), выделена весом 700
-     и зелёным #266E38 — размером цену не кричат. Было 21px/800 чёрным. */
+     и зелёным #266E38, размером цену не кричат. Было 21px/800 чёрным. */
   .price{font-size:18px;font-weight:700;letter-spacing:-.3px;color:var(--green)}
   .price small{font-size:14px;color:var(--green);font-weight:600;font-family:var(--text)}
   .split{font-size:12.5px;color:var(--muted);margin-top:3px}
@@ -183,7 +181,7 @@
   .buy:hover{background:var(--green-d)}
 
   /* Поводов шесть. В сетке из четырёх колонок последний ряд был сиротой
-     из двух карточек. Три колонки — два полных ряда. */
+     из двух карточек. Три колонки, два полных ряда. */
   .occs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   @media(min-width:840px){.occs{grid-template-columns:repeat(3,1fr);gap:24px}}
   .occ{background:#fff;border:1px solid var(--line);border-radius:var(--r-m);padding:26px 24px}
@@ -236,7 +234,7 @@
     .hero{min-height:min(78vh,560px)}
     .hero .in{padding:0 18px 34px}
     /* В строку не влезает, а перенос оставлял разделитель «·» висеть
-       в конце строки. На узком — столбик без разделителей. */
+       в конце строки. На узком, столбик без разделителей. */
     .trust{flex-direction:column;align-items:flex-start;gap:5px;font-size:13.5px}
     .trust .dot{display:none}
     section{padding:40px 0 10px}
@@ -357,7 +355,7 @@
     <div class="spacer"></div>
     <div class="phbox">
       <a class="hphone" href="tel:+79225550124">+7 922 555-01-24</a>
-      <span class="hrs">ежедневно 9:00–21:00</span>
+      <span class="hrs">ежедневно 9:00, 21:00</span>
     </div>
     <a class="tg" href="tel:+79225550124"><svg viewBox="0 0 24 24"><path d="M9.8 16.1 9.6 20c.4 0 .5-.2.8-.4l1.9-1.8 3.9 2.9c.7.4 1.2.2 1.4-.7l2.6-12.1c.2-1-.4-1.4-1-1.1L2.6 10.4c-1 .4-1 .9-.2 1.2l4.4 1.4 10.2-6.4c.5-.3.9-.1.6.2l-7.8 7.3z"/></svg>Telegram</a>
   </div></header>
@@ -497,7 +495,7 @@
 
   <section id="povody">
     <div class="shead"><h2 class="stitle">Поводы</h2>
-      <p class="ssub">Скажите повод — подскажем, что уместно</p></div>
+      <p class="ssub">Скажите повод, подскажем, что уместно</p></div>
     <div class="occs">
       <div class="occ"><b>Юбилей</b><p>Крупная форма и заметная упаковка</p></div>
       <div class="occ"><b>8 Марта</b><p>Принимаем заказы заранее, везём по слоту</p></div>
@@ -512,7 +510,7 @@
     <div class="shead"><h2 class="stitle">Как заказать</h2>
       <p class="ssub">Три шага, звонить никуда не нужно</p></div>
     <div class="steps">
-      <div class="step"><div class="num">01</div><b>Выбираете букет</b><p>Или описываете словами — соберём по описанию</p></div>
+      <div class="step"><div class="num">01</div><b>Выбираете букет</b><p>Или описываете словами, соберём по описанию</p></div>
       <div class="step"><div class="num">02</div><b>Оплачиваете картой</b><p>Онлайн, любой картой. Чек придёт на почту</p></div>
       <div class="step"><div class="num">03</div><b>Собираем и везём</b><p>Собираем в день доставки и привозим по адресу</p></div>
     </div>
@@ -521,7 +519,7 @@
   <section id="zayavka">
     <div class="lead">
       <div class="lh">Не знаете, что выбрать?</div>
-      <p>Оставьте телефон — перезвоним, уточним повод и бюджет, соберём и привезём сегодня. Можно просто описать словами, кому и на какой случай.</p>
+      <p>Оставьте телефон, перезвоним, уточним повод и бюджет, соберём и привезём сегодня. Можно просто описать словами, кому и на какой случай.</p>
       <form class="lform" id="lf" onsubmit="return leadSend(event)">
         <input name="name" placeholder="Ваше имя" required>
         <input name="phone" type="tel" placeholder="Телефон" required>
@@ -643,11 +641,11 @@
       <p class="ssub">Возим сами, аккуратно и в срок</p></div>
     <div class="info">
       <div class="icard"><h4>Доставка по Сургуту</h4>
-        <p>450 ₽ по городу, 800 ₽ в Барсово, Солнечный и Белый Яр. К празднику — по слоту на нужное время, выберете при оформлении.</p></div>
+        <p>450 ₽ по городу, 800 ₽ в Барсово, Солнечный и Белый Яр. К празднику, по слоту на нужное время, выберете при оформлении.</p></div>
       <div class="icard"><h4>Оплата картой</h4>
         <p>Онлайн, любой картой, без звонка и предоплаты наличными. Чек придёт на почту.</p></div>
       <div class="icard"><h4>Гарантия свежести</h4>
-        <p>Собираем в день доставки. Что-то не так — заменим или переделаем.</p></div>
+        <p>Собираем в день доставки. Что-то не так, заменим или переделаем.</p></div>
     </div>
   </section>
 </div>
@@ -656,7 +654,7 @@
   <div class="cols">
     <div><div class="flogo">ФЛОРА</div>Авторские букеты<br>и новогодние ёлки<br>с доставкой по Сургуту</div>
     <div><b>Каталог</b><a href="#catalog">Букеты</a><a href="#ny">Новогодние ёлки</a><a href="#povody">По поводам</a></div>
-    <div><b>Контакты</b><span>Telegram: по запросу</span><a href="tel:+79225550124">+7 922 555-01-24</a><span>Ежедневно 9:00–21:00</span></div>
+    <div><b>Контакты</b><span>Telegram: по запросу</span><a href="tel:+79225550124">+7 922 555-01-24</a><span>Ежедневно 9:00, 21:00</span></div>
     <div><b>Оплата</b><span>Картой онлайн</span><span>Гарантия свежести</span><div class="pay">💳 🟢 🔵</div></div>
   </div>
     <div class="legalbox">
@@ -842,7 +840,7 @@ function leadSend(e,fid,okid){
   });
 })();
 /* Шапка лежит на фото и прозрачна. Фон и разделитель появляются только
-   когда первый экран уехал вверх — иначе верх страницы снова станет плашкой. */
+   когда первый экран уехал вверх, иначе верх страницы снова станет плашкой. */
 document.documentElement.classList.remove('nojs');
 (function(){
   var hd=document.getElementById('hd');
