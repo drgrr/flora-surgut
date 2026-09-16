@@ -335,6 +335,21 @@
   .legalbox .doc b{color:rgba(239,233,221,.85)}
   .legalbox .doc ul{margin:0 0 9px 18px}
   .legalbox .doc li{margin-bottom:5px}
+
+  /* Блок оплаты. Стоит перед формой заявки: человек сначала понимает, как
+     платить, и только потом оставляет телефон. */
+  .payinfo{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);
+    padding:26px 24px;margin:0 0 22px;box-shadow:var(--sh)}
+  .payinfo h3{font-size:19px;margin-bottom:14px}
+  .paysteps{display:grid;gap:12px;margin-bottom:16px}
+  @media(min-width:760px){.paysteps{grid-template-columns:repeat(3,1fr);gap:18px}}
+  .paystep{display:flex;gap:11px;align-items:flex-start}
+  .paystep .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--green);
+    color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
+  .paystep b{display:block;font-size:15px;margin-bottom:2px}
+  .paystep span{font-size:14px;color:var(--muted);line-height:1.45}
+  .paynote{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);
+    padding-top:14px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -559,7 +574,30 @@
   </section>
 
   <section id="zayavka">
-    <div class="lead">
+          <div class="payinfo" id="payinfo">
+        <h3>Как оплатить заказ</h3>
+        <div class="paysteps">
+          <div class="paystep"><div class="n">1</div><div>
+            <b>Выбираете букет</b>
+            <span>Нажимаете «Заказать», оставляете имя и телефон. Можно просто описать словами, кому и на какой повод.</span>
+          </div></div>
+          <div class="paystep"><div class="n">2</div><div>
+            <b>Согласуем состав и получаете счёт</b>
+            <span>Перезваниваем, уточняем детали и адрес, после чего присылаем ссылку на оплату банковской картой.</span>
+          </div></div>
+          <div class="paystep"><div class="n">3</div><div>
+            <b>Оплачиваете и получаете букет</b>
+            <span>Оплата проходит на защищённой странице банка. Чек приходит на телефон или почту. Дальше собираем и везём.</span>
+          </div></div>
+        </div>
+        <div class="paynote">
+          Оплата принимается банковскими картами. Данные карты вводятся на стороне
+          банка, продавцу они не передаются и не хранятся. Подробные условия, реквизиты
+          продавца и порядок отмены заказа собраны внизу страницы, в разделе
+          «Документы и реквизиты».
+        </div>
+      </div>
+      <div class="lead">
       <div class="lh">Не знаете, что выбрать?</div>
       <p>Оставьте телефон, перезвоним, уточним повод и бюджет, соберём и привезём сегодня. Можно просто описать словами, кому и на какой случай.</p>
       <form class="lform" id="lf" onsubmit="return leadSend(event)">
