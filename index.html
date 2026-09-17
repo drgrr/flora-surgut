@@ -68,9 +68,13 @@
      шрифт дерьмовый», то есть идея вордмарка ему подошла, не подошёл сериф.
      Поэтому: вордмарк без знака, гротеск, тесный трекинг, и один срез, «О» набрана кольцом с вырезанным лепестком (inline SVG, масштабируется
      вместе с кеглем через em). */
-  .brand{display:flex;flex-direction:column;line-height:1;gap:7px}
-  .brand .sub{font-size:10px;letter-spacing:2.6px;text-transform:uppercase;
-    color:rgba(245,243,239,.66);font-weight:600}
+  /* Бренд в одну строку: ФЛОРА и справа город. Двухэтажный столбик
+     (логотип + капсовая подпись под ним) владелец забраковал 17.09 как
+     «уродскую шторку слева сверху». Возврат к горизонтали старой версии. */
+  .brand{display:flex;flex-direction:row;align-items:baseline;gap:10px}
+  .brand .city{font-size:13px;font-weight:500;color:rgba(245,243,239,.62);
+    letter-spacing:.2px}
+  .brand .city::before{content:"·";margin-right:8px;color:var(--gold);font-weight:700}
   .logo{font-family:var(--text);font-size:27px;font-weight:800;letter-spacing:-1.1px;
     color:#fff;line-height:1;display:inline-flex;align-items:center}
   /* Кольцо обязано совпасть по весу и росту с соседними литерами Manrope 800,
@@ -228,7 +232,7 @@
   @media(max-width:520px){
     .bar{height:60px;gap:10px}
     .logo{font-size:22px;letter-spacing:-.9px}
-    .brand .sub{display:none}
+    .brand .city{display:none}
     .phbox .hrs{display:none}
     .hphone{font-size:14.5px}
     .hero{min-height:min(78vh,560px)}
@@ -358,7 +362,7 @@
   <header id="hd"><div class="wrap bar">
     <a class="brand" href="#">
       <span class="logo">ФЛОРА</span>
-      <span class="sub">Авторская флористика · Сургут</span>
+      <span class="city">Сургут</span>
     </a>
     <nav class="nav">
       <a href="#catalog">Букеты</a>
@@ -405,7 +409,7 @@
           <h3 class="cname">Пионы сиреневые, моно букет</h3>
           <p class="cnote">плотный круглый купол · без упаковки, перевязка лентой</p>
           <div class="cmeta"><div class="price">2 490<small> ₽</small></div><div class="split"><b>622 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Пионы сиреневые, моно букет" data-price="2 490">Заказать</button>
+          <button class="buy" data-pay="https://pay.tbank.ru/hFDgBNtn" data-item="Пионы сиреневые, моно букет" data-price="2 490">Заказать</button>
         </div>
       </article>
       <article class="card">
@@ -414,7 +418,7 @@
           <h3 class="cname">Пять пионов в белой бумаге</h3>
           <p class="cnote">моно букет · матовая бумага, без ленты</p>
           <div class="cmeta"><div class="price">3 400<small> ₽</small></div><div class="split"><b>850 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Пять пионов в белой бумаге" data-price="3 400">Заказать</button>
+          <button class="buy" data-pay="https://pay.tbank.ru/x80eHT5X" data-item="Пять пионов в белой бумаге" data-price="3 400">Заказать</button>
         </div>
       </article>
       <article class="card">
@@ -423,7 +427,7 @@
           <h3 class="cname">Одиннадцать коралловых пионов</h3>
           <p class="cnote">раскрытые бутоны · крафтовая бумага в один тон</p>
           <div class="cmeta"><div class="price">3 900<small> ₽</small></div><div class="split"><b>975 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Одиннадцать коралловых пионов" data-price="3 900">Заказать</button>
+          <button class="buy" data-pay="https://pay.tbank.ru/6lcY7lGH" data-item="Одиннадцать коралловых пионов" data-price="3 900">Заказать</button>
         </div>
       </article>
       <article class="card">
@@ -432,7 +436,7 @@
           <h3 class="cname">Пионы белые в стеклянной вазе</h3>
           <p class="cnote">крупные раскрытые бутоны · стеклянная ваза в комплекте</p>
           <div class="cmeta"><div class="price">4 900<small> ₽</small></div><div class="split"><b>1 225 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Пионы белые в стеклянной вазе" data-price="4 900">Заказать</button>
+          <button class="buy" data-pay="https://pay.tbank.ru/Y9KitSwv" data-item="Пионы белые в стеклянной вазе" data-price="4 900">Заказать</button>
         </div>
       </article>
       <article class="card">
@@ -441,7 +445,7 @@
           <h3 class="cname">Пионы розовые и кремовые в вазе</h3>
           <p class="cnote">смешанные оттенки · хрустальная ваза в комплекте</p>
           <div class="cmeta"><div class="price">5 900<small> ₽</small></div><div class="split"><b>1 475 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Пионы розовые и кремовые в вазе" data-price="5 900">Заказать</button>
+          <button class="buy" data-pay="https://pay.tbank.ru/UW6t8HCf" data-item="Пионы розовые и кремовые в вазе" data-price="5 900">Заказать</button>
         </div>
       </article>
       <article class="card">
@@ -450,7 +454,7 @@
           <h3 class="cname">Пионы с розовым перцем и эвкалиптом</h3>
           <p class="cnote">круглая форма · крафт и чёрная плёнка</p>
           <div class="cmeta"><div class="price">6 900<small> ₽</small></div><div class="split"><b>1 725 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Пионы с розовым перцем и эвкалиптом" data-price="6 900">Заказать</button>
+          <button class="buy" data-pay="https://pay.tbank.ru/SlTJO7NO" data-item="Пионы с розовым перцем и эвкалиптом" data-price="6 900">Заказать</button>
         </div>
       </article>
       <article class="card">
@@ -459,7 +463,7 @@
           <h3 class="cname">Пионы розовые в белой коробке</h3>
           <p class="cnote">плотная сборка · шляпная коробка, жемчужная нить и лента</p>
           <div class="cmeta"><div class="price">7 900<small> ₽</small></div><div class="split"><b>1 975 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Пионы розовые в белой коробке" data-price="7 900">Заказать</button>
+          <button class="buy" data-pay="https://pay.tbank.ru/JX9VAZs3" data-item="Пионы розовые в белой коробке" data-price="7 900">Заказать</button>
         </div>
       </article>
       <article class="card">
@@ -468,7 +472,15 @@
           <h3 class="cname">Пионы сиреневые с гипсофилой</h3>
           <p class="cnote">пятнадцать бутонов · белая калька и пудровая бумага</p>
           <div class="cmeta"><div class="price">9 900<small> ₽</small></div><div class="split"><b>2 475 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Пионы сиреневые с гипсофилой" data-price="9 900">Заказать</button>
+          <button class="buy" data-pay="https://pay.tbank.ru/nC9uTTsL" data-item="Пионы сиреневые с гипсофилой" data-price="9 900">Заказать</button>
+        </div>
+      </article><article class="card">
+        <div class="ph"><img src="img/b07.jpg" alt="Двадцать пять пионов, премиальный букет" loading="lazy"></div>
+        <div class="cbody">
+          <h3 class="cname">Двадцать пять пионов, премиальный букет</h3>
+          <p class="cnote">крупные раскрытые бутоны · дизайнерская упаковка и атласная лента</p>
+          <div class="cmeta"><div class="price">11 900<small> ₽</small></div><div class="split"><b>2 975 ₽</b> × 4 без переплаты</div></div>
+          <button class="buy" data-pay="https://pay.tbank.ru/vyxnRoUJ" data-item="Двадцать пять пионов, премиальный букет" data-price="11 900">Заказать</button>
         </div>
       </article><article class="card">
         <div class="ph"><img src="img/b22.jpg" alt="Тридцать пять роз премиум в вазе" loading="lazy"></div>
@@ -476,7 +488,7 @@
           <h3 class="cname">Тридцать пять роз премиум в вазе</h3>
           <p class="cnote">крупные двухцветные розы, длинный стебель, стеклянная ваза</p>
           <div class="cmeta"><div class="price">16 900<small> ₽</small></div><div class="split"><b>4 225 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Тридцать пять роз премиум в вазе" data-price="16900">Заказать</button>
+          <button class="buy" data-pay="https://pay.tbank.ru/L5FuuJAg" data-item="Тридцать пять роз премиум в вазе" data-price="16900">Заказать</button>
         </div>
       </article><article class="card">
         <div class="ph"><img src="img/b21.jpg" alt="Кустовые розы кремовые, большой букет" loading="lazy"></div>
@@ -484,7 +496,7 @@
           <h3 class="cname">Кустовые розы кремовые, большой букет</h3>
           <p class="cnote">плотная сборка, плёнка и белая лента, джутовая перевязка</p>
           <div class="cmeta"><div class="price">18 900<small> ₽</small></div><div class="split"><b>4 725 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Кустовые розы кремовые, большой букет" data-price="18900">Заказать</button>
+          <button class="buy" data-pay="https://pay.tbank.ru/4a5t9sFv" data-item="Кустовые розы кремовые, большой букет" data-price="18900">Заказать</button>
         </div>
       </article>
     <article class="card">
@@ -493,7 +505,7 @@
           <h3 class="cname">Охапка пионовидных роз в боксе</h3>
           <p class="cnote">около 40 головок, прозрачный бокс с ручкой, атласная лента</p>
           <div class="cmeta"><div class="price">27 900<small> ₽</small></div><div class="split"><b>6 975 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Охапка пионовидных роз в боксе" data-price="27900">Заказать</button>
+          <button class="buy" data-pay="https://pay.tbank.ru/MlYf6rJY" data-item="Охапка пионовидных роз в боксе" data-price="27900">Заказать</button>
         </div>
       </article></div>
   </section>
@@ -507,26 +519,8 @@
         <div class="cbody">
           <h3 class="cname">Ёлка заснеженная, бело-золотой декор</h3>
           <p class="cnote">очень плотная крона · шары и гирлянда в комплекте</p>
-          <div class="cmeta"><div class="price">3 900<small> ₽</small></div><div class="split"><b>975 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Ёлка заснеженная, бело-золотой декор" data-price="3 900">Заказать</button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><img src="img/t05.jpg" alt="Высокая заснеженная ёлка с золотой гирляндой" loading="lazy"></div>
-        <div class="cbody">
-          <h3 class="cname">Ёлка высокая, заснеженная</h3>
-          <p class="cnote">от 2,5 м · густая крона, тёплая гирлянда и шары в комплекте</p>
-          <div class="cmeta"><div class="price">6 900<small> ₽</small></div><div class="split"><b>1 725 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Ёлка высокая, заснеженная" data-price="6 900">Заказать</button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><img src="img/t06.jpg" alt="Густая зелёная ёлка с пастельными шарами" loading="lazy"></div>
-        <div class="cbody">
-          <h3 class="cname">Ёлка густая, пастельный декор</h3>
-          <p class="cnote">плотная хвоя · матовые шары и тёплая гирлянда в комплекте</p>
-          <div class="cmeta"><div class="price">7 900<small> ₽</small></div><div class="split"><b>1 975 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Ёлка густая, пастельный декор" data-price="7 900">Заказать</button>
+          <div class="cmeta"><div class="price">11 900<small> ₽</small></div><div class="split"><b>2 975 ₽</b> × 4 без переплаты</div></div>
+          <button class="buy" data-pay="https://pay.tbank.ru/7W1tetKO" data-item="Ёлка заснеженная, бело-золотой декор" data-price="11 900">Заказать</button>
         </div>
       </article>
       <article class="card">
@@ -534,8 +528,26 @@
         <div class="cbody">
           <h3 class="cname">Пихта живая, красно-белый декор</h3>
           <p class="cnote">около 2 м · шары, гирлянда и подставка в комплекте</p>
-          <div class="cmeta"><div class="price">8 900<small> ₽</small></div><div class="split"><b>2 225 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Пихта живая, красно-белый декор" data-price="8 900">Заказать</button>
+          <div class="cmeta"><div class="price">13 900<small> ₽</small></div><div class="split"><b>3 475 ₽</b> × 4 без переплаты</div></div>
+          <button class="buy" data-pay="https://pay.tbank.ru/0C4qCe58" data-item="Пихта живая, красно-белый декор" data-price="13 900">Заказать</button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph"><img src="img/t05.jpg" alt="Высокая заснеженная ёлка с золотой гирляндой" loading="lazy"></div>
+        <div class="cbody">
+          <h3 class="cname">Ёлка высокая, заснеженная</h3>
+          <p class="cnote">от 2,5 м · густая крона, тёплая гирлянда и шары в комплекте</p>
+          <div class="cmeta"><div class="price">15 900<small> ₽</small></div><div class="split"><b>3 975 ₽</b> × 4 без переплаты</div></div>
+          <button class="buy" data-pay="https://pay.tbank.ru/7TrkfZXg" data-item="Ёлка высокая, заснеженная" data-price="15 900">Заказать</button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph"><img src="img/t06.jpg" alt="Густая зелёная ёлка с пастельными шарами" loading="lazy"></div>
+        <div class="cbody">
+          <h3 class="cname">Ёлка густая, пастельный декор</h3>
+          <p class="cnote">плотная хвоя · матовые шары и тёплая гирлянда в комплекте</p>
+          <div class="cmeta"><div class="price">17 900<small> ₽</small></div><div class="split"><b>4 475 ₽</b> × 4 без переплаты</div></div>
+          <button class="buy" data-pay="https://pay.tbank.ru/RSeJvhKG" data-item="Ёлка густая, пастельный декор" data-price="17 900">Заказать</button>
         </div>
       </article>
       <article class="card">
@@ -543,8 +555,8 @@
         <div class="cbody">
           <h3 class="cname">Ёлка с белыми и серебряными шарами</h3>
           <p class="cnote">около 1,7 м · плотная крона, шары и гирлянда в комплекте</p>
-          <div class="cmeta"><div class="price">9 900<small> ₽</small></div><div class="split"><b>2 475 ₽</b> × 4 без переплаты</div></div>
-          <button class="buy" data-item="Ёлка с белыми и серебряными шарами" data-price="9 900">Заказать</button>
+          <div class="cmeta"><div class="price">19 900<small> ₽</small></div><div class="split"><b>4 975 ₽</b> × 4 без переплаты</div></div>
+          <button class="buy" data-pay="https://pay.tbank.ru/Wm42yxXZ" data-item="Ёлка с белыми и серебряными шарами" data-price="19 900">Заказать</button>
         </div>
       </article>
     </div>
@@ -952,6 +964,8 @@ document.querySelectorAll('#tabs .tab').forEach(function(t){
    и ведёт к ней, то есть путь покупки доходит до оформления. */
 document.querySelectorAll('.buy').forEach(function(b){
   b.addEventListener('click', function(){
+    var pay = b.getAttribute('data-pay');
+    if (pay) { window.open(pay, '_blank', 'noopener'); return; }
     var item = b.getAttribute('data-item') || '';
     var price = b.getAttribute('data-price') || '';
     var f = document.getElementById('lfitem');
