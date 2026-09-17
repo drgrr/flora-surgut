@@ -965,7 +965,12 @@ document.querySelectorAll('#tabs .tab').forEach(function(t){
 document.querySelectorAll('.buy').forEach(function(b){
   b.addEventListener('click', function(){
     var pay = b.getAttribute('data-pay');
-    if (pay) { window.open(pay, '_blank', 'noopener'); return; }
+    if (pay) {
+      /* Переход в текущей вкладке: window.open браузеры блокируют как
+         всплывающее окно, особенно на телефоне, и кнопка выглядит мёртвой. */
+      window.location.href = pay;
+      return;
+    }
     var item = b.getAttribute('data-item') || '';
     var price = b.getAttribute('data-price') || '';
     var f = document.getElementById('lfitem');
